@@ -12,12 +12,27 @@ function main(){
     var radian= Math.PI* ANGLE/180.0;
     var cosB= Math.cos(radian);
     var sinB= Math.sin(radian);
+    //旋转矩阵
     var xformMatrix= new Float32Array([
         cosB,sinB,0.0,0.0, 
         -sinB,cosB,0.0,0.0, 
         0.0,0.0,1.0,0.0, 
         0.0,0.0,0.0,1.0, 
     ]);
+    //平移矩阵
+    //var xformMatrix= new Float32Array([
+    //    1.0,0.0,0.0,0.0, 
+    //    0.0,1.0,0.0,0.0, 
+    //    0.0,0.0,1.0,0.0, 
+    //    x,y,y,1.0, 
+    //]);
+    //缩放矩阵
+    //var xformMatrix= new Float32Array([
+    //    Sx,0.0,0.0,0.0, 
+    //    0.0,Sy,0.0,0.0, 
+    //    0.0,0.0,Sz,0.0, 
+    //    0.0,0.0,0.0,1.0, 
+    //]);
     //初始化着色器
     if(!initShaders(gl,VSHADER_SOURCE,FSHADER_SOURCE)){
         console.log('Failed to initialize shaders');
