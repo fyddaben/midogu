@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hello Point2</title>
+        <title>Hello Triangle</title>
     </head>
     <body onload="main()">
         <canvas id="webgl" width="400" height="400">
@@ -12,21 +12,19 @@
         <script src="../../js/_glUtil/webgl-utils.js"></script>   
         <script src="../../js/_glUtil/webgl-debug.js"></script>   
         <script src="../../js/_glUtil/cuon-utils.js"></script>   
-
-        <script id="vs-tpl" type="text/x-dot-template">
-            attribute vec4 a_Position;
-            attribute float a_PointSize; 
+        <script id="vs-tpl" type="text/template">
+            attribute vec4 a_Position; 
             void main(){
-                gl_Position= a_Position;
-                gl_PointSize=a_PointSize;
-            }  
+                gl_Position= a_Position; 
+                gl_PointSize= 10.0; 
+            }             
         </script>
-        <script id="fs-tpl" type="text/x-dot-template">
+        <script id="fs-tpl" type="text/template">
             void main(){
                 gl_FragColor= vec4(1.0,0.0,0.0,1.0);
-            } 
+            }
         </script>
-        <script src="../../js/webgl/HelloPoint2.js"></script>
+        <script src="../../js/webgl/HelloTriangle.js"></script>
     
     </body>
 </html>

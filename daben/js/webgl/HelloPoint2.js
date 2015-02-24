@@ -1,14 +1,14 @@
 //顶点着色器程序
 
-var VSHADER_SOURCE='attribute vec4 a_Position;attribute float a_PointSize; void main(){gl_Position= a_Position;gl_PointSize=a_PointSize;}'
+//var VSHADER_SOURCE='attribute vec4 a_Position;attribute float a_PointSize; void main(){gl_Position= a_Position;gl_PointSize=a_PointSize;}'
 //片源着色器
-var FSHADER_SOURCE=
+//var FSHADER_SOURCE=
     //确定精度值
-    'precision mediump float;'+
-    'uniform vec4 u_FragColor;'+
-    'void main(){gl_FragColor= u_FragColor;}'
-
-
+//    'precision mediump float;'+
+//    'uniform vec4 u_FragColor;'+
+//    'void main(){gl_FragColor= u_FragColor;}'
+var VSHADER_SOURCE= document.getElementById("vs-tpl").innerHTML;
+var FSHADER_SOURCE= document.getElementById("fs-tpl").innerHTML;
 function main(){
     var canvas= document.getElementById("webgl");
     var gl= getWebGLContext(canvas);
