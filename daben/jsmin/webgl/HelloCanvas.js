@@ -1,0 +1,1 @@
+function main(){var e=document.getElementById("webgl"),o=getWebGLContext(e);return o?(o.clearColor(0,0,0,1),void o.clear(o.COLOR_BUFFER_BIT)):void console.log("Failed to get the rendering context for WebGl")}

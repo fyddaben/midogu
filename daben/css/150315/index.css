@@ -1,0 +1,1 @@
+html{font-size:16px}.big-block:after,.big-block:before{content:"";display:table}.big-block:after{clear:both;overflow:hidden}.big-block{margin:12.5rem auto 0;padding:0;width:90%;list-style-type:none}.big-block .left-block{float:left;width:50%;height:3.3125rem;background:#ccc}.big-block .right-block{float:left;width:50%;height:3.3125rem;background:red}

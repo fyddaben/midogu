@@ -9,7 +9,8 @@
     "gulp-minify-css":"latest",
     "gulp-changed":"latest",
     "gulp-uglify":"latest",
-    "gulp-less":"latest"
+    "gulp-less":"latest",
+    "gulp-sass":"1.3.3"
   },
   "engines": {
     "node": ">=0.8.0"

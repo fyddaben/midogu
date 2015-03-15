@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello Rotate</title>
+    </head>
+    <body onload="main()">
+        <canvas id="webgl" width="400" height="400">
+            Please user the browser supporting "canvs" 
+        </canvas>
+        <script src="../../js/_glUtil/webgl-utils.js"></script>   
+        <script src="../../js/_glUtil/webgl-debug.js"></script>   
+        <script src="../../js/_glUtil/cuon-utils.js"></script>   
+        <script src="../../js/_glUtil/cuon-matrix.js"></script>   
+        <script id="vs-tpl" type="text/x-dot-template">
+            attribute vec4 a_Position;
+            uniform  mat4 u_ModelMatrix;
+            void main(){
+                gl_Position=  u_ModelMatrix * a_Position;
+            }  
+        </script>
+        <script id="fs-tpl" type="text/x-dot-template">
+            void main(){
+                gl_FragColor= vec4(1.0,0.0,0.0,1.0);
+            } 
+        </script>
+        <script src="../../js/webgl/HelloRotate.js"></script>
+    
+    </body>
+</html>

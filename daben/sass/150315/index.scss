@@ -1,0 +1,72 @@
+$base-font-size: 16 !default;
+@media screen and (max-width:767px){
+    $base-font-size: 13 !default;
+}
+@mixin emCalc($props,$sizes,$base:$base-font-size){
+    $values: ();
+    $sublists: false;
+
+    @each $s in $sizes {
+        //循环列表中多个属性值，例如text-shadow属性
+        @if type-of($s) == list {
+            $sublists: true;
+            $vv: ();
+            @each $ss in $s {
+                $vv: append($vv,if(type-of($ss) == number, #{$ss / $base}rem, $ss));
+            }
+            $values: append($values,join((), $vv));
+        }
+        @else {
+            $values: append($values,if(type-of($s) == number, #{$s / $base}rem, $s));
+        }
+    }
+    $value: join((), $values, if($sublists,comma,space));
+    @each $prop in $props {#{$prop}: $value}
+}
+html{
+    font-size:#{$base-font-size}px;
+}
+$legacy-support-for-ie: false !default;
+@mixin clearfix {
+    @if $legacy-support-for-ie {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+%clearfix {
+    @include clearfix;
+}
+
+
+.big-block{
+    margin: 0 auto;
+    padding:0px;
+    width:90%;
+    @extend %clearfix;    
+    @include emCalc(margin-top,200);
+    list-style-type:none;
+    .left-block{
+        float:left;
+        width:50%;
+        @include emCalc(height,53);
+        background:#ccc;
+    }
+    .right-block{
+        float:left;
+        width:50%;
+        @include emCalc(height,53);
+        background:red;
+    }
+}
+
+
+
